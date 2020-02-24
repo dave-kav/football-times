@@ -1,0 +1,17 @@
+@import forms.TimeData
+@(timeForm: Form[TimeData])(implicit messages: Messages)
+<html>
+<head>
+
+</head>
+<body>
+<h1>Add new Time</h1>
+@helper.form(action = routes.HomeController.postTime()) {
+    @helper.inputText(timeForm("time"))
+    <input type="submit" value="Submit">
+}
+<p></p>
+<a href="@routes.HomeController.listTimes"><h2>List all times</h2></a>
+
+</body>
+</html>
